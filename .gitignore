@@ -7,4 +7,5 @@ plugins/
 .DS_Store
 .editorconfig
 .idea/
+www/lib
 
