@@ -1,0 +1,449 @@
+@font-face {
+    font-family: 'Averta-Regular';
+    src: url("../fonts/Averta.otf") format("opentype");
+    src: url('../fonts/Averta-Regular.eot');
+    src: url('../fonts/Averta-Regular.woff2') format('woff2'),
+    url('../fonts/Averta-Regular.woff') format('woff'),
+    url('../fonts/Averta-Regular.ttf') format('truetype'),
+    url('../fonts/Averta-Regular.svg#Averta-Regular') format('svg'),
+    url('../fonts/Averta-Regular.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta-Bold';
+    src: url("../fonts/Averta-Bold.otf") format("opentype");
+    src: url('../fonts/Averta-Bold.eot');
+    src: url('../fonts/Averta-Bold.woff2') format('woff2'),
+    url('../fonts/Averta-Bold.woff') format('woff'),
+    url('../fonts/Averta-Bold.ttf') format('truetype'),
+    url('../fonts/Averta-Bold.svg#Averta-Bold') format('svg'),
+    url('../fonts/Averta-Bold.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirLTStd-Black';
+    src: url('../fonts/AvenirLTStd-Black.eot');
+    src: url('../fonts/AvenirLTStd-Black.woff2') format('woff2'),
+    url('../fonts/AvenirLTStd-Black.woff') format('woff'),
+    url('../fonts/AvenirLTStd-Black.ttf') format('truetype'),
+    url('../fonts/AvenirLTStd-Black.svg#AvenirLTStd-Black') format('svg'),
+    url('../fonts/AvenirLTStd-Black.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('../fonts/Lato-Bold.eot');
+    src: url('../fonts/Lato-Bold.woff2') format('woff2'),
+    url('../fonts/Lato-Bold.woff') format('woff'),
+    url('../fonts/Lato-Bold.ttf') format('truetype'),
+    url('../fonts/Lato-Bold.svg#Lato-Bold') format('svg'),
+    url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+input, select, textarea{
+    font-family: 'Averta-Regular', "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: 'Averta-Bold', "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+
+button{
+    font-size: 10px;
+    font-family: 'Averta-Bold', "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+
+    .icon:before{
+        vertical-align: middle !important;
+        font-size: 16px !important;
+    }
+}
+
+.div-center{
+    display: block;
+    max-width: 100%;
+    margin: auto;
+}
+
+.no-border{
+    border: none;
+}
+
+.text-right{
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.color-blue{
+    color: #3958b6;
+}
+
+.button.button-transparent{
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+
+    &.color-blue{
+        color: #3958b6;
+    }
+}
+
+.bar.bar-positive {
+    background-image: linear-gradient(0deg, #3a5ab8, #3a5ab8 50%, transparent 50%);
+}
+
+.item-input.inp-with-btn{
+   input[readonly]{
+       background: none;
+       font-family: 'Averta-Bold', "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+   }
+
+    button{
+        position: absolute;
+        right: 10px;
+        z-index: 5;
+    }
+
+    textarea{
+        padding-right: 44px;
+        min-height: 100px;
+    }
+
+    textarea + button{
+        bottom: 10px;
+    }
+
+    .placeholder-icon{
+        font-size: 22px;
+        color: #000;
+    }
+}
+
+.item-avatar{
+    padding-left: 110px;
+    min-height: 110px;
+    background: linear-gradient(to bottom, #3a5ab8, #2e4791);
+    border: 0;
+    display: flex;
+    align-items: center;
+
+    > img:first-child{
+        max-width: 80px;
+        max-height: 80px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+    }
+
+    .user-info{
+
+        h2{
+            font-size: 20px;
+            color: #fff;
+        }
+
+        p{
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+}
+
+.oval-button{
+    border-radius: 30px;
+}
+
+.item-image.main-prop-img {
+    border: none;
+    box-sizing: border-box;
+    line-height: 0;
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0) 12%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.76) 100%);
+        content: '';
+    }
+
+    .like-btn{
+        position: absolute;
+        top: 10px;
+        right: 0;
+        z-index: 5;
+        padding: 5px 10px 5px;
+        min-height: 10px;
+        min-width: 10px;
+        color: #fff;
+        border: none;
+        line-height: 1em;
+        border-radius: 0;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 18px;
+
+        &:before{
+            font-weight: bold;
+            line-height: 1em;
+        }
+
+        &.liked{
+            background: #ff0a4a;
+        }
+    }
+
+    .prop-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+        padding: 9px 10px;
+        line-height: 1.5;
+
+        P {
+            color: #fff;
+            text-align: left;
+            font-family: 'Lato-Bold', "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+
+            &.price {
+                font-family: 'AvenirLTStd-Black', "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.prop-description {
+    padding: 10px;
+
+    a{
+        color: #000;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+.item-checkbox {
+    border-color: #fff;
+
+    &.checked {
+        background: #eff3fd;
+        border-radius: 28px;
+    }
+}
+
+.checkbox {
+    input {
+        &:before, &:after {
+            border-color: #3754b2;
+            border-width: 2px;
+        }
+    }
+
+    .checkbox-icon {
+        &:before, &:after {
+            border-color: #3754b2;
+            border-width: 2px;
+        }
+    }
+}
+
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background: #fff;
+    border-color: #3754b2;
+}
+
+/** Multi range **/
+    ui-multi-range {
+        @include flex(1);
+        position: relative;
+        height: 50px;
+        input[type=range] {
+            position: absolute;
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0 2px;
+            overflow: hidden;
+            border: 0;
+            border-radius: 1px;
+            outline: none;
+            pointer-events: none;
+            background: linear-gradient(to right, #3958b6 0%, #3958b6 100%);
+            background-position: center;
+            background-size: 99% 2px;
+            background-repeat: no-repeat;
+
+            &:active,
+            &:focus {
+                outline: none;
+            }
+
+            &::-webkit-slider-thumb {
+                position: relative;
+                cursor: pointer;
+                pointer-events: all;
+                background: #3958b6;
+                &::before {
+                    content: ' ';
+                    display: block;
+                    position: absolute;
+                    top: 13px;
+                    left: 100%;
+                    width: 2000px;
+                    height: 2px;
+                    background: #3958b6;
+                }
+            }
+
+            &:nth-child(2) {
+                background: none;
+
+                &::-webkit-slider-thumb::before {
+                    background-color: #3958b6;
+                }
+            }
+        }
+    }
+
+    .range-options {
+        padding: 16px;
+        box-sizing: border-box;
+
+        .range-label {
+            display: inline-block;
+            width: 45%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+
+            &:first-child {
+                float: left;
+            }
+
+            &:last-child {
+                float: right;
+            }
+        }
+    }
+
+    .bar-header {
+        h1 {
+            text-transform: uppercase;
+        }
+    }
+
+    .blue-bg {
+        .bar-header {
+            background-image: none;
+            background-color: rgb(58, 90, 184);
+            border: none;
+
+            .ion-navicon-round {
+                margin: 20px 10px 0 0;
+
+                &:before {
+                    font-size: 35px;
+                }
+            }
+        }
+
+        .scroll-content {
+            background: linear-gradient(to bottom, rgb(58, 90, 184), rgb(25, 25, 112));
+        }
+
+        &.menu-open {
+            .main-menu {
+                z-index: 1 !important;
+            }
+        }
+    }
+
+    #logo {
+        padding: 20% 0 10% 0;
+    }
+
+    .main-menu {
+        z-index: 0;
+        overflow: visible;
+        background: #1e2341;
+
+        &:before {
+            position: absolute;
+            top: 20px;
+            left: -40px;
+            z-index: 12;
+            content: '';
+            border: 20px solid transparent;
+            border-right: 20px solid #1e2341;
+        }
+
+        .bar-header {
+            background: #1e2341;
+        }
+
+        .list {
+            padding-left: 50px;
+
+            a {
+                color: #fff;
+                font-size: 16px;
+                font-family: 'Averta-Bold', "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+                text-transform: uppercase;
+                text-decoration: none;
+                line-height: 3;
+            }
+        }
+    }
+
+    .bar-footer {
+
+        &.has-button {
+            padding: 0;
+
+            .button {
+                margin: 0;
+                font-size: 16px;
+            }
+        }
+
+        &.bar-gradient{
+            border: 0;
+            background: transparent linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 100%);
+
+            button{
+                border: 0;
+            }
+        }
+    }
+
+    #map{
+        height: 200px;
+
+        &.full-screen{
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top: 0;
+            left: 0;
+            min-width: 300px;
+        }
+    }

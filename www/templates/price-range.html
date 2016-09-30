@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ionicApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>PRICE RANGE</title>
+
+	<!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">-->
+
+	<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above-->
+	<link href="css/ionic.app.css" rel="stylesheet">
+
+
+	<!-- ionic/angularjs js -->
+	<script src="lib/ionic/js/ionic.bundle.js"></script>
+
+	<!-- cordova script (this will be a 404 during development) -->
+	<script src="cordova.js"></script>
+
+	<!-- your app's js -->
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/services.js"></script>
+</head>
+<body ng-app="MyCtrl">
+	<ion-header-bar align-title="center" class="bar-positive">
+		<div class="buttons">
+			<button class="button icon ion-chevron-left no-border"></button>
+		</div>
+		<h1 class="title">PRICE RANGE</h1>
+		<div class="buttons">
+			<button class="button button-transparent icon ion-navicon-round no-border"></button>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="has-header has-footer">
+		<div class="list">
+			<div class="range range-positive">
+				<ui-multi-range ng-step="1" ng-min="priceMin" ng-max="priceMax" ng-model-min="range.from" ng-model-max="range.to" ng-change-min="somethingHasChanged()" ng-change-max="somethingHasChanged()"></ui-multi-range>
+			</div>
+
+			<div class="range-options">
+				<div class="range-label">${{range.from}}</div>
+				<div class="range-label">${{range.to}}</div>
+			</div>
+		</div>
+
+	</ion-content>
+
+	<ion-footer-bar align-title="center" class="bar-balanced has-button">
+		<button class="button button-full button-balanced">
+			ADD CHANGES
+		</button>
+	</ion-footer-bar>
+
+<!-- Multi range -->
+<script>
+	function MultiRangeDirective ($compile) {
+		var directive = {
+			restrict: 'E',
+			scope: {
+				ngModelMin: '=',
+				ngModelMax: '=',
+				ngMin: '=',
+				ngMax: '=',
+				ngStep: '=',
+				ngChangeMin: '&',
+				ngChangeMax: '&'
+			},
+			link: link
+		};
+
+		return directive;
+
+		////////////////////
+
+		function link ($scope, $element, $attrs) {
+			var min, max, step, $inputMin = angular.element('<input type="range">'), $inputMax;
+			$scope.ngChangeMin = $scope.ngChangeMin || angular.noop;
+			$scope.ngChangeMax = $scope.ngChangeMax || angular.noop;
+
+			if (typeof $scope.ngMin == 'undefined') {
+				min = 0;
+			} else {
+				min = $scope.ngMin;
+				$inputMin.attr('min', min);
+			}
+			if (typeof $scope.ngMax == 'undefined') {
+				max = 0;
+			} else {
+				max = $scope.ngMax;
+				$inputMin.attr('max', max);
+			}
+			if (typeof $scope.ngStep == 'undefined') {
+				step = 0;
+			} else {
+				step = $scope.ngStep;
+				$inputMin.attr('step', step);
+			}
+			$inputMax = $inputMin.clone();
+			$inputMin.attr('ng-model', 'ngModelMin');
+			$inputMax.attr('ng-model', 'ngModelMax');
+			$compile($inputMin)($scope);
+			$compile($inputMax)($scope);
+			$element.append($inputMin).append($inputMax);
+			$scope.ngModelMin = $scope.ngModelMin || min;
+			$scope.ngModelMax = $scope.ngModelMax || max;
+
+			$scope.$watch('ngModelMin', function (newVal, oldVal) {
+				if (newVal > $scope.ngModelMax) {
+					$scope.ngModelMin = oldVal;
+				} else {
+					$scope.ngChangeMin();
+				}
+			});
+
+			$scope.$watch('ngModelMax', function (newVal, oldVal) {
+				if (newVal < $scope.ngModelMin) {
+					$scope.ngModelMax = oldVal;
+				} else {
+					$scope.ngChangeMax();
+				}
+			});
+		}
+	}
+
+	angular.module('ionicApp', ['ionic'])
+			.directive('uiMultiRange', MultiRangeDirective)
+			.controller('MyCtrl', function($scope, $timeout) {
+				$scope.priceMin = 1000;
+				$scope.priceMax = 200000;
+				$scope.range = {
+					from: 0,
+					to: 200000000
+				};
+				//$scope.from = 30;
+				//$scope.to = 40;
+				$scope.somethingHasChanged = function () {
+					console.log('change!', $scope.range);
+				};
+				$scope.printRange = function () {
+					$timeout(function () {
+						console.log('range =', $scope.range);
+					})
+				}
+			})
+
+</script>
+</body>
+</html>

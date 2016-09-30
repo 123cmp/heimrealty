@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>CONTACT AGENT</title>
+
+	<!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">-->
+
+	<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above-->
+	<link href="css/ionic.app.css" rel="stylesheet">
+
+
+	<!-- ionic/angularjs js -->
+	<script src="lib/ionic/js/ionic.bundle.js"></script>
+
+	<!-- cordova script (this will be a 404 during development) -->
+	<script src="cordova.js"></script>
+
+	<!-- your app's js -->
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/services.js"></script>
+</head>
+<body ng-app="starter">
+<ion-header-bar align-title="center" class="bar-positive">
+	<div class="buttons">
+		<button class="button icon ion-chevron-left no-border"></button>
+	</div>
+	<h1 class="title">CONTACT AGENT</h1>
+	<div class="buttons">
+		<button class="button button-transparent icon ion-navicon-round no-border"></button>
+	</div>
+</ion-header-bar>
+
+<ion-content class="has-header">
+	<div class="list">
+		<div class="item item-avatar">
+			<img src="img/avatar.png" alt="Varlee Koskovich">
+			<div class="user-info">
+				<h2>Varlee Koskovich</h2>
+				<p>973-335-0811</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="list list-inset">
+		<label class="item item-input inp-with-btn">
+			<i class="icon ion-email placeholder-icon"></i>
+			<input type="text" value="spencer@gmail.com">
+			<button class="button button-transparent no-border color-blue button-small icon ion-edit"></button>
+		</label>
+	</div>
+
+	<div class="list list-inset">
+		<label class="item item-input inp-with-btn">
+			<i class="icon ion-ios-telephone placeholder-icon"></i>
+			<input type="text" value="973-000-999">
+			<button class="button button-transparent no-border color-blue button-small icon ion-edit"></button>
+		</label>
+	</div>
+
+	<div class="list list-inset">
+		<label class="item item-input inp-with-btn">
+			<textarea>Hello I am interested in 1010 E Cache La Poudre St id 33232</textarea>
+			<button class="button button-transparent no-border color-blue button-small icon ion-edit"></button>
+		</label>
+	</div>
+
+</ion-content>
+
+<ion-footer-bar align-title="center" class="bar-balanced has-button">
+	<button class="button button-full button-balanced">
+		SEND
+	</button>
+</ion-footer-bar>
+</body>
+</html>

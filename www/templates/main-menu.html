@@ -1,0 +1,56 @@
+<ion-side-menus>
+    <!--right menu -->
+    <ion-side-menu-content>
+        <ion-header-bar>
+            <div class="row text-right">
+                <button class="button button-transparent icon ion-navicon-round no-border"></button>
+            </div>
+        </ion-header-bar>
+
+        <ion-content class="hav-header has-footer">
+            <div class="row row-center">
+                <div class="col col-50 col-offset-25">
+                    <img id="logo" src="img/logo.png" alt="HeimRealty" class="div-center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button ui-sref="search.property" class="button button-block button-transparent oval-button">
+                        PROPERTY SEARCH
+                    </button>
+                    <button ui-sref="search.onmap" class="button button-block button-transparent oval-button">
+                        SEARCH ON MAP
+                    </button>
+                    <button class="button button-block button-transparent oval-button">
+                        SEARCH NEAR ME
+                    </button>
+                </div>
+            </div>
+        </ion-content>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="right" class="main-menu">
+        <ion-header-bar class="bar-dark">
+        </ion-header-bar>
+        <ul class="list">
+            <li>
+                <a href="#">My favorites</a>
+            </li>
+            <li>
+                <a href="#">Property search</a>
+            </li>
+            <li>
+                <a href="#">Search on map</a>
+            </li>
+            <li>
+                <a href="#">Search near me</a>
+            </li>
+            <li>
+                <a href="#">About us</a>
+            </li>
+            <li>
+                <a href="#">Settings</a>
+            </li>
+        </ul>
+    </ion-side-menu>
+</ion-side-menus>
